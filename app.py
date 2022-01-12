@@ -35,7 +35,7 @@ def index():
     body = request.json
     events = body["events"]
     print(body)
-    replyMessage(body)
+    replyMessage(events)
     if "replyToken" in events[0]:
         payload = dict()
         replyToken = events[0]["replyToken"]
