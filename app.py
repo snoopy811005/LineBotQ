@@ -264,9 +264,10 @@ def getImageMessage(originalContentUrl):
 
 
 def replyMessage(payload):
-    response = request.post("https://judy-line-q.herokuapp.com/reply/content", header=HEADER, data=json.dumps(payload))
+    response = {}
     print("in!!!")
-    print(response.text)
+    print(payload)
+#     print(response.text)
     return 'OK'
 
 
