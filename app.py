@@ -35,6 +35,7 @@ def index():
     body = request.json
     events = body["events"]
     print(body)
+    replyMessage(body)
     if "replyToken" in events[0]:
         payload = dict()
         replyToken = events[0]["replyToken"]
@@ -263,9 +264,15 @@ def getImageMessage(originalContentUrl):
 
 
 def replyMessage(payload):
-    response = {}
+    response = request.post("https://judy-line-q.herokuapp.com/reply/content", header=HEADER, data=json.dumps(payload))
+    print("in!!!")
     print(response.text)
     return 'OK'
+
+
+@app.route("/reply/content", methods=['POST'])
+def replyMessageContent():
+    return {'text':'HI'}
 
 
 def pushMessage(payload):
