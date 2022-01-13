@@ -95,15 +95,14 @@ def index():
                               }
                             }
                         ]
-                elif text == "Taipei 101":
+                elif text == "開始搜尋":
                     payload["messages"] = [
                         {
                             "type": "template",
-                            "altText": "This is a buttons template",
+                            "altText": "This is a confirm template",
                             "template": {
-                                "type": "buttons",
-                                "title": "是否規劃 Taipei 101 附近景點",
-                                "text": "請選擇",
+                                "type": "confirm",
+                                "text": "傳送當前位置資訊嗎?",
                                 "actions": [
                                     {
                                         "type": "message",
