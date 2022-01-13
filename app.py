@@ -99,15 +99,15 @@ def index():
                     payload["messages"] = [
                         {
                             "type": "template",
-                            "altText": "This is a confirm template",
+                            "altText": "This is a buttons template",
                             "template": {
-                                "type": "confirm",
-                                "text": "傳送當前位置資訊嗎?",
+                                "type": "buttons",
+                                "title": "傳送當前位置資訊嗎?",
+                                "text": "請選擇",
                                 "actions": [
                                     {
                                         "type": "location",
-                                        "label": "傳送",
-                                        "text": "傳送"
+                                        "label": "傳送"
                                     },
                                     {
                                         "type": "message",
