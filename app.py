@@ -106,7 +106,8 @@ def index():
                                 "actions": [
                                     {
                                         "type": "location",
-                                        "label": "傳送"
+                                        "label": "傳送",
+                                        "text": "傳送"
                                     },
                                     {
                                         "type": "message",
