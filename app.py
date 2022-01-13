@@ -151,9 +151,9 @@ def index():
                 elif action == "get_detail":
                     del data["action"]
                     payload["messages"] = [getTaipei101ImageMessage(data),
-                                           getTaipei101LocationMessage(data)]
+                                           getTaipei101LocationMessage(data),
 #                                            getMRTVideoMessage(data),
-#                                            getCallCarMessage(data)]
+                                           getCallCarMessage(data)]
                 replyMessage(payload)
 
     return 'OK'
