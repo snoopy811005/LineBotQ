@@ -294,7 +294,7 @@ def getPlayStickerMessage():
     return message
 
 
-def getTaipei101LocationMessage():
+def getTaipei101LocationMessage(data):
     title = data["title"]
     
     message = dict()
