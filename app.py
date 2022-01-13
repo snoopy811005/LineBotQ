@@ -235,9 +235,10 @@ def getLocationConfirmMessage(title, latitude, longitude):
         "text": "是否規劃 " + title + " 附近景點?",
         "actions": [
             {
-                "type": "message",
+                "type": "postback",
                 "label": "是",
-                "text": "是"
+                "data": '&'.join([key + "=" + val for key, val in data]),
+                "text":"是"
             },
             {
                 "type": "message",
