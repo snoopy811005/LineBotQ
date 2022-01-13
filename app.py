@@ -232,7 +232,7 @@ def getLocationConfirmMessage(title, latitude, longitude):
     data = {"title": title, "latitude": latitude, "longitude": longitude, "action": "get_near"}
     message["template"] = {
         "type": "confirm",
-        "text": "正確無誤嗎?",
+        "text": "是否規劃 " + title + " 附近景點?",
         "actions": [
             {
                 "type": "message",
@@ -242,7 +242,7 @@ def getLocationConfirmMessage(title, latitude, longitude):
             {
                 "type": "message",
                 "label": "否",
-                "text": "否"
+                "text": "感謝您的使用"
             }
         ]
     }
