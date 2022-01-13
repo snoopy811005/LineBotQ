@@ -105,19 +105,20 @@ def index():
                                 "text": "傳送當前位置資訊嗎?",
                                 "actions": [
                                     {
-                                        "type": "message",
-                                        "label": "是",
-                                        "text": "是"
+                                        "type": "location",
+                                        "label": "傳送"
                                     },
                                     {
                                         "type": "message",
-                                        "label": "否",
-                                        "text": "否"
+                                        "label": "不傳送",
+                                        "text": "不傳送"
                                     }
                                 ]
                             }
                         }
                     ]
+                elif text == "傳送":
+                    
                 else:
                     payload["messages"] = [
                             {
