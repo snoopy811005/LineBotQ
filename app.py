@@ -279,10 +279,23 @@ def getLocationConfirmMessage(title, latitude, longitude):
 def getCallCarMessage(data):
     message = dict()
     message["type"] = "template"
-    message["altText"] = "this is a confirm template"
+    message["altText"] = "This is a confirm template"
     message["template"] = {
-
-                      }
+        "type": "confirm",
+        "text": "是否需要叫車服務?",
+        "actions": [
+            {
+                "type": "message",
+                "label": "是",
+                "text": "是"
+            },
+            {
+                "type": "message",
+                "label": "否",
+                "text": "否"
+            }
+        ]
+    }
     return message
 
 
