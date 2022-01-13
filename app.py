@@ -150,8 +150,8 @@ def index():
                     payload["messages"] = [getCarouselMessage(data)]
                 elif action == "get_detail":
                     del data["action"]
-                    payload["messages"] = [getTaipei101ImageMessage(data)]
-#                                            getTaipei101LocationMessage(data),
+                    payload["messages"] = [getTaipei101ImageMessage(data),
+                                           getTaipei101LocationMessage(data)]
 #                                            getMRTVideoMessage(data),
 #                                            getCallCarMessage(data)]
                 replyMessage(payload)
@@ -295,12 +295,25 @@ def getPlayStickerMessage():
 
 
 def getTaipei101LocationMessage():
+    title = data["title"]
+    
     message = dict()
     message["type"] = "location"
-    message["title"] = "Taipei101"
-    message["address"] = "No. 7, Sec. 5, Xinyi Rd., Xinyi Dist., Taipei City, Taiwan (R.O.C.)"
-    message["latitude"] = 25.033671
-    message["longitude"] = 121.564427
+    message["title"] = title
+    
+    if title == "台北101":
+        message["address"] = "No. 7, Sec. 5, Xinyi Rd., Xinyi Dist., Taipei City, Taiwan (R.O.C.)"
+        message["latitude"] = 25.033671
+        message["longitude"] = 121.564427
+    elif title == "台北孔廟":
+        message["address"] = "No. 275, Dalong St., Datong Dist., Taipei City, Taiwan (R.O.C.)"
+        message["latitude"] = 25.072917
+        message["longitude"] = 121.516528
+    elif title == "士林夜市":
+        message["address"] = "No. 101, Jihe Rd., Shilin Dist., Taipei City, Taiwan (R.O.C.)"
+        message["latitude"] = 25.088944
+        message["longitude"] = 121.524417
+
     return message
 
 
