@@ -117,8 +117,6 @@ def index():
                             }
                         }
                     ]
-                elif text == "傳送":
-                    
                 else:
                     payload["messages"] = [
                             {
