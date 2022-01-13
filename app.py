@@ -228,7 +228,7 @@ def getCarouselMessage(data):
                 }
               },
               {
-                "imageUrl": F"{end_point}/static/temple.jpeg",
+                "imageUrl": F"{end_point}/static/temple.jpg",
                 "action": {
                   "type": "message",
                   "label": "台北孔廟",
@@ -236,7 +236,7 @@ def getCarouselMessage(data):
                 }
               },
               {
-                "imageUrl": F"{end_point}/static/shilin.jpeg",
+                "imageUrl": F"{end_point}/static/shilin.jpg",
                 "action": {
                   "type": "message",
                   "label": "士林夜市",
