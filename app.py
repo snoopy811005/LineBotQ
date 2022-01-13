@@ -83,21 +83,6 @@ def index():
                                       },
                                       {
                                         "type": "message",
-                                        "label": "出去玩囉",
-                                        "text": "出去玩囉"
-                                      },
-                                      {
-                                        "type": "message",
-                                        "label": "台北101",
-                                        "text": "台北101"
-                                      },
-                                      {
-                                        "type": "message",
-                                        "label": "扣打",
-                                        "text": "扣打"
-                                      },
-                                      {
-                                        "type": "message",
                                         "label": "今日確診人數",
                                         "text": "今日確診人數"
                                       },
@@ -110,6 +95,30 @@ def index():
                               }
                             }
                         ]
+                elif text == "Taipei 101":
+                    payload["messages"] = [
+                        {
+                            "type": "template",
+                            "altText": "This is a buttons template",
+                            "template": {
+                                "type": "buttons",
+                                "title": "是否規劃 Taipei 101 附近景點",
+                                "text": "請選擇",
+                                "actions": [
+                                    {
+                                        "type": "message",
+                                        "label": "是",
+                                        "text": "是"
+                                    },
+                                    {
+                                        "type": "message",
+                                        "label": "否",
+                                        "text": "否"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
                 else:
                     payload["messages"] = [
                             {
