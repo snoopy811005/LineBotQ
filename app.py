@@ -227,7 +227,7 @@ def getPlayStickerMessage():
     message["type"] = "sticker"
     message["stickerId"] = "1988"
     message["packageId"] = "446"
-    return message
+    return json.dumps(message)
 
 
 def getTaipei101LocationMessage():
