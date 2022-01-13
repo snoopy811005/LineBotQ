@@ -237,7 +237,7 @@ def getLocationConfirmMessage(title, latitude, longitude):
             {
                 "type": "postback",
                 "label": "是",
-                "data": '&'.join([key + "=" + data[key] for key in data]),
+                "data": "action=get_near",
                 "text":"是"
             },
             {
