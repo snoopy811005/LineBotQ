@@ -150,10 +150,10 @@ def index():
                     payload["messages"] = [getCarouselMessage(data)]
                 elif action == "get_detail":
                     del data["action"]
-                    payload["messages"] = [getTaipei101ImageMessage(),
-                                           getTaipei101LocationMessage(),
-                                           getMRTVideoMessage(),
-                                           getCallCarMessage(data)]
+                    payload["messages"] = [getTaipei101ImageMessage(data)]
+#                                            getTaipei101LocationMessage(data),
+#                                            getMRTVideoMessage(data),
+#                                            getCallCarMessage(data)]
                 replyMessage(payload)
 
     return 'OK'
@@ -222,24 +222,27 @@ def getCarouselMessage(data):
               {
                 "imageUrl": F"{end_point}/static/taipei_101.jpeg",
                 "action": {
-                  "type": "message",
+                  "type": "postback",
                   "label": "台北101",
+                  "data": json.dumps({"title": "台北101", "action": "get_detail"}),
                   "text": "台北101"
                 }
               },
               {
                 "imageUrl": F"{end_point}/static/temple.jpg",
                 "action": {
-                  "type": "message",
+                  "type": "postback",
                   "label": "台北孔廟",
+                  "data": json.dumps({"title": "台北孔廟", "action": "get_detail"}),
                   "text": "台北孔廟"
                 }
               },
               {
                 "imageUrl": F"{end_point}/static/shilin.jpg",
                 "action": {
-                  "type": "message",
+                  "type": "postback",
                   "label": "士林夜市",
+                  "data": json.dumps({"title": "士林夜市", "action": "get_detail"}),
                   "text": "士林夜市"
                 }
               }
@@ -322,7 +325,14 @@ def getMRTSoundMessage():
     return message
 
 
-def getTaipei101ImageMessage(originalContentUrl=F"{end_point}/static/taipei_101.jpeg"):
+def getTaipei101ImageMessage(data, originalContentUrl=F"{end_point}/static/taipei_101.jpeg"):
+    title = data["title"]
+    if title == "台北101":
+        originalContentUrl = F"{end_point}/static/taipei_101.jpeg"
+    elif title == "台北孔廟":
+        originalContentUrl = F"{end_point}/static/temple.jpg"
+    elif title == "士林夜市":
+        originalContentUrl = F"{end_point}/static/shilin.jpg"
     return getImageMessage(originalContentUrl)
 
 
